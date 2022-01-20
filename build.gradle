@@ -30,7 +30,15 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
-
+jar {
+    archiveBaseName = 'caesar-cipher'
+    archiveVersion =  scmVersion.version
+    manifest {
+        attributes 'Implementation-Title': 'Caesar cipher',
+                   'Implementation-Version': archiveVersion,
+                   'Main-Class': 'caesars.cipher.Main'
+    }
+}
 test {
 	useJUnitPlatform()
     testLogging {
