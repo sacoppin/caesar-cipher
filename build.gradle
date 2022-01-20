@@ -9,7 +9,10 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.6'
 }
+
+version = scmVersion.version
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -32,7 +35,7 @@ dependencies {
 }
 jar {
     archiveBaseName = 'caesar-cipher'
-    archiveVersion =  scmVersion.version
+    archiveVersion =  version
     manifest {
         attributes 'Implementation-Title': 'Caesar cipher',
                    'Implementation-Version': archiveVersion,
