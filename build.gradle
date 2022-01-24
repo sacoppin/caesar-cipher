@@ -21,7 +21,7 @@ repositories {
 }
 jar {
     archiveBaseName = 'caesar-cipher'
-    archiveVersion =  'v'version
+    archiveVersion =  'v'+version
     manifest {
         attributes 'Implementation-Title': 'Caesar cipher',
                    'Implementation-Version': archiveVersion,
