@@ -24,7 +24,7 @@ pipeline {
                 sh 'message="$(git for-each-ref refs/tags/$tag --format=\'%(contents)\')"'
                 sh 'name=$(echo "$message" | head -n1)'
                 sh 'description=$(echo "$message" | tail -n +3)'
-                sh 'description=$(echo "$description" | sed -z \'s/\n/\\n/g\')'
+                sh 'description=$(echo "$description" | sed -z "s/\n/\\n/g")'
             }
         }
         stage('Deploy') {
