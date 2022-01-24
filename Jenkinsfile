@@ -21,6 +21,7 @@ pipeline {
             steps {
                 sh 'token="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"'
                 sh 'tag=$(git describe --tags)'
+                sh 'message="$(git for-each-ref refs/tags/$tag --format=\'%(contents)\')"'
             }
         }
         stage('Deploy') {
